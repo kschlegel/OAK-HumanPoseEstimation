@@ -5,6 +5,7 @@ from .poseestimator import PoseEstimator
 from .openpose import OpenPose
 from .efficienthrnet import EfficientHRNet
 from .convolutionalposemachine import ConvolutionalPoseMachine
+from .posenet import PoseNet
 
 
 def add_poseestimator_args(parser):
@@ -35,7 +36,7 @@ def add_poseestimator_args(parser):
                                                  default=option["default"]))
     # When adding a new PoseEstimator subclass add it to this list to
     # automatically register its hyperparameters as command line arguments
-    for estimator in (OpenPose, EfficientHRNet, ConvolutionalPoseMachine):
+    for estimator in (OpenPose, PoseNet):
         estimator_name = str(estimator)
         estimator_name = estimator_name[estimator_name.rindex(".") + 1:-2]
         for option_name, option in estimator.get_specific_options():

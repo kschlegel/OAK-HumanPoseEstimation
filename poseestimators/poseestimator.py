@@ -57,7 +57,7 @@ class PoseEstimator(ABC):
             "divider":
             100,
             "default":
-            30,
+            15,
             "description":
             "Set the confidence threshold for keypoint detection in %%."
         }
@@ -138,7 +138,7 @@ class PoseEstimator(ABC):
             option_dict = getattr(self, option_dict)
             if option in option_dict:
                 if option_dict[option]["divider"] != 1:
-                    value /= option_dict[option]["divider"]
+                    value /= float(option_dict[option]["divider"])
                 setattr(self, "_" + option, value)
                 break
 
