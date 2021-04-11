@@ -222,7 +222,7 @@ class PoseEstimator(ABC):
         -------
         personwise_keypoints : numpy array
             Numpy array of shape (n, self._num_keypoints, 3) where n is the
-            number of detected_keypoints. For each person contains each
+            number of detected people. For each person contains each
             landmark as (x,y,confidence), if a landmark was not detected all 3
             values will be zero.
         """
@@ -311,8 +311,26 @@ class PoseEstimator(ABC):
     @abstractmethod
     def decode_results(self, outputs):
         """
+        Decode network outputs into keypoint data.
+
         After retrieving and reshaping the outputs from the network the
         decoding process can be very different between architectures and should
-        be implemented in each specific class.
+        be implemented in each specific class. This function should take the
+        extracted network outputs and parse them to obtain an array of
+        keypoints grouped by persons.
+
+        Parameters
+        ----------
+        outputs : list of numpy arrays
+            Output arrays retrieved from the network. As returned by
+            PoseEstimator._convert_raw_outputs
+
+        Returns
+        -------
+        personwise_keypoints : numpy array
+            Numpy array of shape (n, self._num_keypoints, 3) where n is the
+            number of detected people. For each person contains each
+            landmark as (x,y,confidence), if a landmark was not detected all 3
+            values will be zero.
         """
         ...

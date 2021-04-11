@@ -103,7 +103,7 @@ class EfficientHRNet(PoseEstimator):
         -------
         personwise_keypoints : numpy array
             Numpy array of shape (n, self._num_keypoints, 3) where n is the
-            number of detected_keypoints. For each person contains each
+            number of detected people. For each person contains each
             landmark as (x,y,confidence), if a landmark was not detected all 3
             values will be zero.
         """
@@ -191,7 +191,7 @@ class EfficientHRNet(PoseEstimator):
         -------
         personwise_keypoints : numpy array
             Numpy array of shape (n, self._num_keypoints, 3) where n is the
-            number of detected_keypoints. For each person contains each
+            number of detected people. For each person contains each
             landmark as (x,y,confidence), if a landmark was not detected all 3
             values will be zero.
         """
