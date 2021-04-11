@@ -2,118 +2,250 @@
     "openpose1": {
         "source": "openvino_open_model_zoo",
         "model": "human-pose-estimation-0001",
-        "url":
-        "https://github.com/openvinotoolkit/open_model_zoo/tree/master/models/intel/human-pose-estimation-0001",
+        "url": "https://github.com/openvinotoolkit/open_model_zoo/tree/master/models/intel/human-pose-estimation-0001",
         "blob": "human-pose-estimation-0001_290321_ov2021.2",
         "feature_extractor": "MobileNetv1",
-        "input_size": [456, 256],
+        "input_size": [
+            456,
+            256
+        ],
         "color_order": "BGR",
-        "output_layers": ["Mconv7_stage2_L2", "Mconv7_stage2_L1"],
+        "output_layers": [
+            "Mconv7_stage2_L2",
+            "Mconv7_stage2_L1"
+        ],
         "decoder": "OpenPose"
     },
     "openpose2_small": {
         "source": "PINTO_model_zoo",
         "model": "007_Mobilenetv2_Pose_Estimation (50)",
-        "url":
-        "https://github.com/PINTO0309/PINTO_model_zoo/tree/main/007_mobilenetv2-poseestimation",
+        "url": "https://github.com/PINTO0309/PINTO_model_zoo/tree/main/007_mobilenetv2-poseestimation",
         "blob": "openpose_mobilenetv2_small_070421_ov2021.2",
         "feature_extractor": "MobileNetv2",
-        "input_size": [432, 368],
+        "input_size": [
+            432,
+            368
+        ],
         "color_order": "BGR",
-        "output_layers": ["Openpose/concat_stage7"],
+        "output_layers": [
+            "Openpose/concat_stage7"
+        ],
         "decoder": "OpenPose"
     },
     "openpose2_large": {
         "source": "PINTO_model_zoo",
         "model": "007_Mobilenetv2_Pose_Estimation (140)",
-        "url":
-        "https://github.com/PINTO0309/PINTO_model_zoo/tree/main/007_mobilenetv2-poseestimation",
+        "url": "https://github.com/PINTO0309/PINTO_model_zoo/tree/main/007_mobilenetv2-poseestimation",
         "blob": "openpose_mobilenetv2_large_070421_ov2021.2",
         "feature_extractor": "MobileNetv2",
-        "input_size": [432, 368],
+        "input_size": [
+            432,
+            368
+        ],
         "color_order": "BGR",
-        "output_layers": ["Openpose/concat_stage7"],
+        "output_layers": [
+            "Openpose/concat_stage7"
+        ],
         "decoder": "OpenPose"
     },
     "openpose3": {
-        "source":
-        "PINTO_model_zoo",
-        "model":
-        "088_Mobilenetv3_Pose_Estimation",
-        "url":
-        "https://github.com/PINTO0309/PINTO_model_zoo/tree/master/088_mobilenetv3-poseestimation",
-        "blob":
-        "openpose_mobilenetv3_290321_ov2021.2",
-        "feature_extractor":
-        "MobileNetv3",
-        "input_size": [224, 224],
-        "color_order":
-        "BGR",
+        "source": "PINTO_model_zoo",
+        "model": "088_Mobilenetv3_Pose_Estimation",
+        "url": "https://github.com/PINTO0309/PINTO_model_zoo/tree/master/088_mobilenetv3-poseestimation",
+        "blob": "openpose_mobilenetv3_290321_ov2021.2",
+        "feature_extractor": "MobileNetv3",
+        "input_size": [
+            224,
+            224
+        ],
+        "color_order": "BGR",
         "output_layers": [
             "open_pose_single_net/MobilenetV3/stage_3/conv2d_4/Conv2D",
             "open_pose_single_net/MobilenetV3/stage_2/conv2d_3/Conv2D"
         ],
-        "decoder":
-        "OpenPose"
+        "decoder": "OpenPose"
     },
     "efficienthrnet1": {
         "source": "openvino_open_model_zoo",
         "model": "human-pose-estimation-0002",
-        "url":
-        "https://github.com/openvinotoolkit/open_model_zoo/tree/master/models/intel/human-pose-estimation-0005",
+        "url": "https://github.com/openvinotoolkit/open_model_zoo/tree/master/models/intel/human-pose-estimation-0005",
         "blob": "human-pose-estimation-0002_290321_ov2021.2",
         "feature_extractor": null,
-        "input_size": [288, 288],
+        "input_size": [
+            288,
+            288
+        ],
         "color_order": "BGR",
-        "output_layers": ["heatmaps", "nms_heatmaps", "embeddings"],
+        "output_layers": [
+            "heatmaps",
+            "nms_heatmaps",
+            "embeddings"
+        ],
         "decoder": "EfficientHRNet"
     },
     "efficienthrnet2": {
         "source": "openvino_open_model_zoo",
         "model": "human-pose-estimation-0003",
-        "url":
-        "https://github.com/openvinotoolkit/open_model_zoo/tree/master/models/intel/human-pose-estimation-0006",
+        "url": "https://github.com/openvinotoolkit/open_model_zoo/tree/master/models/intel/human-pose-estimation-0006",
         "blob": "human-pose-estimation-0003_290321_ov2021.2",
         "feature_extractor": null,
-        "input_size": [352, 352],
+        "input_size": [
+            352,
+            352
+        ],
         "color_order": "BGR",
-        "output_layers": ["heatmaps", "nms_heatmaps", "embeddings"],
+        "output_layers": [
+            "heatmaps",
+            "nms_heatmaps",
+            "embeddings"
+        ],
         "decoder": "EfficientHRNet"
     },
     "efficienthrnet3": {
         "source": "openvino_open_model_zoo",
         "model": "human-pose-estimation-0004",
-        "url":
-        "https://github.com/openvinotoolkit/open_model_zoo/tree/master/models/intel/human-pose-estimation-0007",
+        "url": "https://github.com/openvinotoolkit/open_model_zoo/tree/master/models/intel/human-pose-estimation-0007",
         "blob": "human-pose-estimation-0004_290321_ov2021.2",
         "feature_extractor": null,
-        "input_size": [448, 448],
+        "input_size": [
+            448,
+            448
+        ],
         "color_order": "BGR",
-        "output_layers": ["heatmaps", "nms_heatmaps", "embeddings"],
+        "output_layers": [
+            "heatmaps",
+            "nms_heatmaps",
+            "embeddings"
+        ],
         "decoder": "EfficientHRNet"
     },
     "global_cpm": {
         "source": "openvino_open_model_zoo",
         "model": "single-human-pose-estimation-0001",
-        "url":
-        "https://github.com/openvinotoolkit/open_model_zoo/tree/master/models/public/single-human-pose-estimation-0001",
+        "url": "https://github.com/openvinotoolkit/open_model_zoo/tree/master/models/public/single-human-pose-estimation-0001",
         "blob": "single-human-pose-estimation-0001_290321_ov2021.2",
         "feature_extractor": null,
-        "input_size": [288, 384],
+        "input_size": [
+            288,
+            384
+        ],
         "color_order": "BGR",
-        "output_layers": ["heatmaps"],
+        "output_layers": [
+            "heatmaps"
+        ],
         "decoder": "ConvolutionalPoseMachine"
     },
     "openpose3d": {
         "source": "openvino_open_model_zoo",
         "model": "human-pose-estimation-3d-0001",
-        "url":
-        "https://github.com/openvinotoolkit/open_model_zoo/tree/master/models/public/human-pose-estimation-3d-0001",
+        "url": "https://github.com/openvinotoolkit/open_model_zoo/tree/master/models/public/human-pose-estimation-3d-0001",
         "blob": "human-pose-estimation-3d-0001_290321_ov2021.2",
         "feature_extractor": null,
-        "input_size": [448, 256],
+        "input_size": [
+            448,
+            256
+        ],
         "color_order": "BGR",
-        "output_layers": ["heatmaps", "pafs", "features"],
+        "output_layers": [
+            "heatmaps",
+            "pafs",
+            "features"
+        ],
         "decoder": "OpenPose"
+    },
+    "posenet_mobilenet_str16": {
+        "source": "tensorflow_tfjs-models_posenet",
+        "model": "mobilenet_v1_100_str16",
+        "url": "https://github.com/tensorflow/tfjs-models/tree/master/posenet",
+        "blob": "posenet-mobilenetv1_075_110421_ov2021.1_str16",
+        "feature_extractor": "MobileNetv1",
+        "input_size": [
+            641,
+            481
+        ],
+        "color_order": "BGR",
+        "output_layers": [
+            "MobilenetV1/heatmap_2/BiasAdd/Add",
+            "MobilenetV1/offset_2/BiasAdd/Add",
+            "MobilenetV1/displacement_fwd_2/BiasAdd/Add",
+            "MobilenetV1/displacement_bwd_2/BiasAdd/Add"
+        ],
+        "decoder": "PoseNet"
+    },
+    "posenet_mobilenet_str8": {
+        "source": "tensorflow_tfjs-models_posenet",
+        "model": "mobilenet_v1_100_str16",
+        "url": "https://github.com/tensorflow/tfjs-models/tree/master/posenet",
+        "blob": "posenet-mobilenetv1_075_110421_ov2021.1_str8",
+        "feature_extractor": "MobileNetv1",
+        "input_size": [
+            641,
+            481
+        ],
+        "color_order": "BGR",
+        "output_layers": [
+            "MobilenetV1/heatmap_2/BiasAdd/Add",
+            "MobilenetV1/offset_2/BiasAdd/Add",
+            "MobilenetV1/displacement_fwd_2/BiasAdd/Add",
+            "MobilenetV1/displacement_bwd_2/BiasAdd/Add"
+        ],
+        "decoder": "PoseNet"
+    },
+    "posenet_mobilenet_str16_x07": {
+        "source": "tensorflow_tfjs-models_posenet",
+        "model": "mobilenet_v1_100_str16",
+        "url": "https://github.com/tensorflow/tfjs-models/tree/master/posenet",
+        "blob": "posenet-mobilenetv1_075_110421_ov2021.1_str16_x07",
+        "feature_extractor": "MobileNetv1",
+        "input_size": [
+            449,
+            337
+        ],
+        "color_order": "BGR",
+        "output_layers": [
+            "MobilenetV1/heatmap_2/BiasAdd/Add",
+            "MobilenetV1/offset_2/BiasAdd/Add",
+            "MobilenetV1/displacement_fwd_2/BiasAdd/Add",
+            "MobilenetV1/displacement_bwd_2/BiasAdd/Add"
+        ],
+        "decoder": "PoseNet"
+    },
+    "posenet_resnet_str16": {
+        "source": "tensorflow_tfjs-models_posenet",
+        "model": "resnet50_str16",
+        "url": "https://github.com/tensorflow/tfjs-models/tree/master/posenet",
+        "blob": "posenet-resnet50_110421_ov2021.1_str16",
+        "feature_extractor": "ResNet50",
+        "input_size": [
+            641,
+            481
+        ],
+        "color_order": "BGR",
+        "output_layers": [
+            "float_heatmaps/Add",
+            "float_short_offsets/Add",
+            "resnet_v1_50/displacement_fwd_2/BiasAdd/Add",
+            "resnet_v1_50/displacement_bwd_2/BiasAdd/Add"           
+        ],
+        "decoder": "PoseNet"
+    },
+    "posenet_resnet_str16_x07": {
+        "source": "tensorflow_tfjs-models_posenet",
+        "model": "resnet50_str16",
+        "url": "https://github.com/tensorflow/tfjs-models/tree/master/posenet",
+        "blob": "posenet-resnet50_110421_ov2021.1_str16_x07",
+        "feature_extractor": "ResNet50",
+        "input_size": [
+            449,
+            337
+        ],
+        "color_order": "BGR",
+        "output_layers": [
+            "float_heatmaps/Add",
+            "float_short_offsets/Add",
+            "resnet_v1_50/displacement_fwd_2/BiasAdd/Add",
+            "resnet_v1_50/displacement_bwd_2/BiasAdd/Add"
+        ],
+        "decoder": "PoseNet"
     }
 }
