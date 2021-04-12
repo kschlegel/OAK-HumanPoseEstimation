@@ -45,8 +45,12 @@ class PoseEstimator(ABC):
     # Example: detection_threshold:{"max_val": 100, "divider": 100, "default":
     # 30, "description": "..."}  means the slider for detection_threshold will
     # range from 0 to 100 with a default of 30 and the slider value will be
-    # divided by 100 before use as threshold. The command line arg will be
-    # described as "..." when running -h
+    # divided by 100 before use as threshold. You don't have to do this
+    # transformation yourself, e.g. if you want to specify a percentage value
+    # with a step size of 1% define an option with max_val 100 and divider 100
+    # and the self._option variable will automatically be set to
+    # integer_val/divider and thus be percentage value in the range 0 to 1.
+    # The command line arg will be described as "..." when running -h
     # _general_options will apply to all PoseEstimator objects,
     # _specific_options allows to define extra options in subclasses which only
     # apply there
@@ -323,7 +327,9 @@ class PoseEstimator(ABC):
         ----------
         outputs : list of numpy arrays
             Output arrays retrieved from the network. As returned by
-            PoseEstimator._convert_raw_outputs
+            PoseEstimator._convert_raw_outputs. The order of the outputs is
+            exactly as the order of output layers in the models.json
+            configuration file.
 
         Returns
         -------

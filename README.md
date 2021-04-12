@@ -121,7 +121,8 @@ model_identifier: {
 	"decoder": "Name of default decoder class"
 }
 ```
-For example:
+Note that the order in which you specify the outputs layers in the configuration is exactly the order in which they will provided to your decoder class.\
+As an example consider:
 ```
 "openpose1": {
     "source": "openvino_open_model_zoo",
@@ -173,7 +174,8 @@ class EstimatorClass(PoseEstimator):
 		}
 	}
 ```
-Parameter values here have to be specified as integer values to be tuneable by sliders in an OPenCV window. The value will be within the range 0 to `max_val` and the slider value, divided by `divider` will be available in the class as `self._parameter_name`. Unless specified as command line option the value defaults to `default`. E.g. above would create a slider ranging from 0 to 20, defaulting to 10 and in the EstimatorClass the value `self._parameter_name` would be available, it would be in the range 0 to 1, with a step size of 0.05 and a default of 0.5.
+Parameter values here have to be specified as integer values to be tuneable by sliders in an OPenCV window. The value will be within the range 0 to `max_val` and the slider value, divided by `divider` will be available in the class as `self._parameter_name`. Unless specified as command line option the value defaults to `default`. E.g. above would create a slider ranging from 0 to 20, defaulting to 10 and in the EstimatorClass the value `self._parameter_name` would be available, it would be in the range 0 to 1, with a step size of 0.05 and a default of 0.5. You won't need to transform the integer value yourself, if you are looking to define a percentage with a stepsize of 1% define an option with max_val=100 and divider=100 and the variable in your class will automatically be mapped into the range 0 to 1 by dividing the integer value by the divider.\
+Note that every decoder by default has a parameter 'detection_threshold' ranging from 0 to 100 with a divider of a 100 (i.e. a percentage value with a stepsize of 1%, which can be accessed in the class as self._detection_threshold, where the value will be between 0 and 1).
 
 5. In the class constructor define the shape of the outputs of your model, e.g. OpenPose heatmaps are one eigth of the size of the input image.
 ```

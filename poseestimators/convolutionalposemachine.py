@@ -26,6 +26,12 @@ class ConvolutionalPoseMachine(PoseEstimator):
                    [6, 8], [8, 10], [5, 11], [6, 12], [11, 12], [11, 13],
                    [13, 15], [12, 14], [14, 16]]
 
+    # Possible options for tuning the performance of the estimator
+    # See poseestimator.PoseEstimator._general_options for a description
+    # All models automatically have options defined in
+    # poseestimator._general_options options (check there for which these are)
+    _specific_options = {}
+
     def __init__(self, model_config, **kwargs):
         """
         Parameters
@@ -80,7 +86,9 @@ class ConvolutionalPoseMachine(PoseEstimator):
         ----------
         outputs : list of numpy arrays
             Output arrays retrieved from the network. As returned by
-            PoseEstimator._convert_raw_outputs
+            PoseEstimator._convert_raw_outputs. The order of the outputs is
+            exactly as the order of output layers in the models.json
+            configuration file.
 
         Returns
         -------
